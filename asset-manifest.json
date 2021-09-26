@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/LoLChampTracker/static/css/main.a617e044.chunk.css",
+    "main.js": "/LoLChampTracker/static/js/main.cfc0d725.chunk.js",
+    "main.js.map": "/LoLChampTracker/static/js/main.cfc0d725.chunk.js.map",
+    "runtime-main.js": "/LoLChampTracker/static/js/runtime-main.ca07130d.js",
+    "runtime-main.js.map": "/LoLChampTracker/static/js/runtime-main.ca07130d.js.map",
+    "static/js/2.55dbbb6c.chunk.js": "/LoLChampTracker/static/js/2.55dbbb6c.chunk.js",
+    "static/js/2.55dbbb6c.chunk.js.map": "/LoLChampTracker/static/js/2.55dbbb6c.chunk.js.map",
+    "static/js/3.4db99ee2.chunk.js": "/LoLChampTracker/static/js/3.4db99ee2.chunk.js",
+    "static/js/3.4db99ee2.chunk.js.map": "/LoLChampTracker/static/js/3.4db99ee2.chunk.js.map",
+    "index.html": "/LoLChampTracker/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/LoLChampTracker/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.55dbbb6c.chunk.js.LICENSE.txt": "/LoLChampTracker/static/js/2.55dbbb6c.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/LoLChampTracker/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ca07130d.js",
+    "static/js/2.55dbbb6c.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.cfc0d725.chunk.js"
+  ]
+}
