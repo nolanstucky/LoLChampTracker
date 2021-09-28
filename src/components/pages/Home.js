@@ -45,6 +45,7 @@ export default function Home() {
     }
 
     function handleShowPlayedChamps() {
+     
         setShowUnplayedChamps(false)
         setShowPlayedChamps(true)
         setPlayedButton(false)
@@ -52,6 +53,7 @@ export default function Home() {
     }
 
     function handleShowUnplayedChamps() {
+    
         setShowUnplayedChamps(true)
         setShowPlayedChamps(false)
         setPlayedButton(true)
@@ -67,7 +69,7 @@ export default function Home() {
         <Box>
             <Box sx={{ flexGrow: 1 }} align="center" style={{ position: "fixed", top: 0, width: "100%", height: "100px", backgroundColor: "#121c40", zIndex: 10, boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }} boxShadow="initial">
                 <Grid container justifyContent="center" spacing={0}>
-                    <Grid marginTop="28px" marginLeft="20px" marginRight="25px">
+                    <Grid marginTop="28px" marginLeft="-100px" marginRight="25px">
                         <Button size="large" onClick={handleLockIn} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Lock In </span></Button>
                     </Grid>
 

@@ -37,14 +37,14 @@ export default function ChampCard(props) {
             onClick={handleClick} id={props.props}
          
         >
-            <Stack margin="10px" >
+            <Stack margin="10px">
                 
                 <Box>
                     <img id={props.props} src={`http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${props.props}_0.jpg`} height="225px" />
                 </Box>
                 <Box sx={{
                     width: "124px",
-                    height: "50px",
+                    height: "53px",
                     zIndex: 1,
                     bgcolor: 'rgba(0, 0, 0, 0.5)',
                     marginTop: -60,
@@ -59,10 +59,11 @@ export default function ChampCard(props) {
                 {pickChamp ?  
                     <Box sx={{
                         width: "124px",
-                        height: "220px",
+                        height: "224px",
                         zIndex: 1,
                         bgcolor: 'rgba(0, 0, 0, 0.8)',
                         marginTop: -220,
+                        marginBottom: -5
                         
                     }}
                     id={props.props}/>
