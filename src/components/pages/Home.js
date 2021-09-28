@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 import ChampCard from "../champCard";
 import Navbar from "../navbar"
 import Box from '@material-ui/core/Box';
@@ -10,27 +10,52 @@ var playedChampions = JSON.parse(localStorage.getItem("played champ"));
 console.log(playedChampions)
 determineChampionsLeft();
 
-function determineChampionsLeft(){
+function determineChampionsLeft() {
 
     champions = champions.filter(item => !playedChampions.includes(item))
     console.log(champions)
 }
 
-function handleClick(e) {
-    e.preventDefault();
-    console.log('The link was clicked.');
-  }
 
 export default function Home() {
+
+    const [showRandomChamp, setShowRandomChamp] = useState(false);
+    const [count, setCount] = useState(0);
+    let randomNum = Math.floor(Math.random() * champions.length);
+  
+    function handleRandomChamp() {
+        setShowRandomChamp(false);
+        randomNum = Math.floor(Math.random() * champions.length);
+        // randomChampImage = <img src={`http://ddragon.leagueoflegends.com/cdn/11.19.1/img/champion/${champions[randomNum]}.png`} />
+        setShowRandomChamp(true);
+        setCount(champions[randomNum])
+        console.log(champions[randomNum])
+        
+    }
+
+    function handleChampReset() {
+      playedChampions = [];
+      localStorage.setItem('played champ', JSON.stringify(playedChampions));
+      window.location.reload(false);
+    }
     return (
         <Box>
             <Box sx={{ flexGrow: 1 }} align="center" style={{ position: "fixed", top: 0, width: "100%", height: "100px", backgroundColor: "#121c40", zIndex: 10, boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }} boxShadow="initial">
-                <Box>
-                    <Button size="500px" onClick={handleClick} variant="contained" >Random</Button>
-                </Box>
+                <Grid container justifyContent="center" spacing={0}>
+                    <Grid item xs={0} marginTop="28px" marginRight="100px">
+                        <Button size="large" onClick={handleRandomChamp} variant="contained"><span style={{fontFamily: "Friz Quadrata"}}>Random</span></Button>
+                    </Grid>
+                    <Grid marginTop="5px" width="90px">
+                        {showRandomChamp ? <img height="90px" src={`http://ddragon.leagueoflegends.com/cdn/11.19.1/img/champion/${count}.png`} /> : null}
+                    </Grid>
+                    <Grid marginTop="28px" marginLeft="100px">
+                        <Button size="large" onClick={handleChampReset} variant="contained"><span style={{fontFamily: "Friz Quadrata"}}>Reset</span></Button>
+                    </Grid>
+                </Grid>
+
             </Box>
             <Grid display="flex" flexWrap="wrap" marginLeft="15px" marginTop="100px">
-                {champions.map(champ => <ChampCard props={champ}/>)}
+                {champions.map(champ => <ChampCard props={champ} />)}
             </Grid>
         </Box>
     )
