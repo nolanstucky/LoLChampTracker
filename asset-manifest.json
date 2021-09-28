@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/LoLChampTracker/static/css/main.a617e044.chunk.css",
-    "main.js": "/LoLChampTracker/static/js/main.556acfe5.chunk.js",
-    "main.js.map": "/LoLChampTracker/static/js/main.556acfe5.chunk.js.map",
+    "main.js": "/LoLChampTracker/static/js/main.244914df.chunk.js",
+    "main.js.map": "/LoLChampTracker/static/js/main.244914df.chunk.js.map",
     "runtime-main.js": "/LoLChampTracker/static/js/runtime-main.d8d3ec96.js",
     "runtime-main.js.map": "/LoLChampTracker/static/js/runtime-main.d8d3ec96.js.map",
     "static/js/2.051cb027.chunk.js": "/LoLChampTracker/static/js/2.051cb027.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d8d3ec96.js",
     "static/js/2.051cb027.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.556acfe5.chunk.js"
+    "static/js/main.244914df.chunk.js"
   ]
 }
