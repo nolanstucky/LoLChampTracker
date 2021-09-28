@@ -77,14 +77,14 @@ export default function Home() {
         <Box>
             <Box sx={{ flexGrow: 1 }} align="center" style={{ position: "fixed", top: 0, width: "100%", height: "145px", backgroundColor: "#121c40", zIndex: 10, boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }} boxShadow="initial">
                 <Grid container justifyContent="center" spacing={0}>
-                    <Grid marginTop="45px" marginLeft="-100px" marginRight="25px">
+                    <Grid marginTop="45px" marginLeft="-100px" marginRight="20px">
                         <Button size="large" onClick={handleLockIn} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Lock In </span></Button>
                     </Grid>
 
                     <Grid item xs={0} marginTop="45px" marginRight="100px">
                         <Button size="large" onClick={handleRandomChamp} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Random</span></Button>
                     </Grid>
-                    <Grid marginTop="5px" width="90px" height="90px" marginLeft="-50px" marginRight="50px">
+                    <Grid marginTop="5px" width="90px" height="90px" marginLeft="-50px" marginRight="53px">
 
                         <Box width="90px" height="90px" marginLeft="50px" marginRight="50px">
                         {showRandomChamp ? <img height="90px" src={`http://ddragon.leagueoflegends.com/cdn/11.19.1/img/champion/${count}.png`} /> : null}
@@ -122,13 +122,13 @@ export default function Home() {
 
             </Box>
             {showUnplayedChamps ?
-                <Grid display="flex" flexWrap="wrap" marginLeft="15px" marginTop="150px">
+                <Grid display="flex" flexWrap="wrap" marginLeft="25px" marginTop="150px">
                     {championFilter.map(champ => <ChampCard props={champ} />)}
                 </Grid>
                 : null}
 
             {showPlayedChamps ?
-                <Grid display="flex" flexWrap="wrap" marginLeft="15px" marginTop="150px">
+                <Grid display="flex" flexWrap="wrap" marginLeft="12px" marginTop="150px">
                     {playedChampions.map(champ => <PlayedChampCard props={champ} />)}
                 </Grid>
                 : null}

@@ -41,7 +41,7 @@ export default function PlayedChampCard(props) {
                 </Box>
                 <Box sx={{
                     width: "124px",
-                    height: "50px",
+                    height: "53px",
                     zIndex: 1,
                     bgcolor: 'rgba(0, 0, 0, 0.5)',
                     marginTop: -60,
@@ -60,6 +60,7 @@ export default function PlayedChampCard(props) {
                         zIndex: 1,
                         bgcolor: 'rgba(0, 0, 0, 0.8)',
                         marginTop: -220,
+                        marginBottom: -5
                         
                     }}
                     id={props.props}/>
