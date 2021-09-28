@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
 import { Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 
 
-export default function ChampCard(props) {
+export default function PlayedChampCard(props) {
 
     
     const [border, setBorder] = useState(0)
-    const [pickChamp, setPickChamp] = useState(false)
+    const [pickChamp, setPickChamp] = useState(true)
 
 
     function handleClick(e) {
@@ -74,4 +71,3 @@ export default function ChampCard(props) {
     )
 
 }
-
