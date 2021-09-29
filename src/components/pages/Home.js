@@ -5,6 +5,7 @@ import { Grid } from '@mui/material';
 import Button from '@mui/material/Button';
 import PlayedChampCard from "../playedChampCard";
 import { Paper, InputBase, Divider } from "@mui/material";
+import MediaQuery from 'react-responsive'
 
 var champions = ['Aatrox', 'Ahri', 'Akali', 'Akshan', 'Alistar', 'Amumu', 'Anivia', 'Annie', 'Aphelios', 'Ashe', 'AurelionSol', 'Azir', 'Bard', 'Blitzcrank', 'Brand', 'Braum', 'Caitlyn', 'Camille', 'Cassiopeia', 'Chogath', 'Corki', 'Darius', 'Diana', 'DrMundo', 'Draven', 'Ekko', 'Elise', 'Evelynn', 'Ezreal', 'Fiddlesticks', 'Fiora', 'Fizz', 'Galio', 'Gangplank', 'Garen', 'Gnar', 'Gragas', 'Graves', 'Gwen', 'Hecarim', 'Heimerdinger', 'Illaoi', 'Irelia', 'Ivern', 'Janna', 'JarvanIV', 'Jax', 'Jayce', 'Jhin', 'Jinx', 'Kaisa', 'Kalista', 'Karma', 'Karthus', 'Kassadin', 'Katarina', 'Kayle', 'Kayn', 'Kennen', 'Khazix', 'Kindred', 'Kled', 'KogMaw', 'Leblanc', 'LeeSin', 'Leona', 'Lillia', 'Lissandra', 'Lucian', 'Lulu', 'Lux', 'Malphite', 'Malzahar', 'Maokai', 'MasterYi', 'MissFortune', 'Mordekaiser', 'Morgana', 'Nami', 'Nasus', 'Nautilus', 'Neeko', 'Nidalee', 'Nocturne', 'Nunu', 'Olaf', 'Orianna', 'Ornn', 'Pantheon', 'Poppy', 'Pyke', 'Qiyana', 'Quinn', 'Rakan', 'Rammus', 'RekSai', 'Rell', 'Renekton', 'Rengar', 'Riven', 'Rumble', 'Ryze', 'Samira', 'Sejuani', 'Senna', 'Seraphine', 'Sett', 'Shaco', 'Shen', 'Shyvana', 'Singed', 'Sion', 'Sivir', 'Skarner', 'Sona', 'Soraka', 'Swain', 'Sylas', 'Syndra', 'TahmKench', 'Taliyah', 'Talon', 'Taric', 'Teemo', 'Thresh', 'Tristana', 'Trundle', 'Tryndamere', 'TwistedFate', 'Twitch', 'Udyr', 'Urgot', 'Varus', 'Vayne', 'Veigar', 'Velkoz', 'Vi', 'Viego', 'Viktor', 'Vladimir', 'Volibear', 'Warwick', 'MonkeyKing', 'Xayah', 'Xerath', 'XinZhao', 'Yasuo', 'Yone', 'Yorick', 'Yuumi', 'Zac', 'Zed', 'Ziggs', 'Zilean', 'Zoe', 'Zyra', 'Vex']
 var playedChampions = JSON.parse(localStorage.getItem("played champ"));
@@ -26,7 +27,9 @@ export default function Home() {
     }
     const championFilter = champions.filter(champion =>
         champion.toLowerCase().startsWith(term.toLowerCase()))
-    console.log(championFilter)
+
+    const playedChampionFilter = playedChampions.filter(playedChampions =>
+        playedChampions.toLowerCase().startsWith(term.toLowerCase()))
 
     const [showPlayedChamps, setShowPlayedChamps] = useState(false)
     const [showUnplayedChamps, setShowUnplayedChamps] = useState(true)
@@ -75,8 +78,10 @@ export default function Home() {
     }
     return (
         <Box>
-            <Box sx={{ flexGrow: 1 }} align="center" style={{ position: "fixed", top: 0, width: "100%", height: "145px", backgroundColor: "#121c40", zIndex: 10, boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }} boxShadow="initial">
-                <Grid container justifyContent="center" spacing={0}>
+            <MediaQuery minWidth={1920}>
+                <Box>
+                    <Box style={{ position: "fixed", top: 0, width: "100%", height: "145px", backgroundColor: "#121c40", zIndex: 10, boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }} boxShadow="initial">
+                        <Grid container justifyContent="center" spacing={0}>
                     <Grid marginTop="45px" marginLeft="-100px" marginRight="20px">
                         <Button size="large" onClick={handleLockIn} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Lock In </span></Button>
                     </Grid>
@@ -93,7 +98,7 @@ export default function Home() {
                         <Box margin="10px">
                             <Paper
                                 component="form"
-                                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 160,}}
+                                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 165,}}
                             >
                                 <InputBase
                                     sx={{ ml: 1, flex: 1 }}
@@ -110,7 +115,7 @@ export default function Home() {
                     </Grid>
                     {playedButton ?
                         <Grid marginTop="45px" marginLeft="20px" marginRight="-100px">
-                            <Button size="large" onClick={handleShowPlayedChamps} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Played</span></Button>
+                            <Button size="large" onClick={handleShowPlayedChamps} variant="contained" ><span style={{ fontFamily: "Friz Quadrata", marginRight: "12px", marginLeft: "12px" }}>Played</span></Button>
                         </Grid>
                         : null}
                     {unplayedButton ?
@@ -120,18 +125,26 @@ export default function Home() {
                         : null}
                 </Grid>
 
-            </Box>
-            {showUnplayedChamps ?
-                <Grid display="flex" flexWrap="wrap" marginLeft="25px" marginTop="150px">
-                    {championFilter.map(champ => <ChampCard props={champ} />)}
-                </Grid>
-                : null}
+       
+                    </Box>
+                    {showUnplayedChamps ?
+                        <Grid display="flex" flexWrap="wrap" marginLeft="25px" marginTop="150px">
+                            {championFilter.map(champ => <ChampCard props={champ} />)}
+                        </Grid>
+                        : null}
 
-            {showPlayedChamps ?
-                <Grid display="flex" flexWrap="wrap" marginLeft="12px" marginTop="150px">
-                    {playedChampions.map(champ => <PlayedChampCard props={champ} />)}
-                </Grid>
-                : null}
+                    {showPlayedChamps ?
+                        <Grid display="flex" flexWrap="wrap" marginLeft="25px" marginTop="150px">
+                            {playedChampionFilter.map(champ => <PlayedChampCard props={champ} />)}
+                        </Grid>
+                        : null}
+                </Box>
+            </MediaQuery>
+            <MediaQuery maxWidth={1919}>
+                <Box justifyContent="center" alignContent="center">
+                    <h1>Mobile coming soon!</h1>
+                </Box>
+            </MediaQuery>
         </Box>
     )
 }

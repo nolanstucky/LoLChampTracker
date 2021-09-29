@@ -56,7 +56,8 @@ export default function ChampCard(props) {
 
                     </Box>
                 </Box>
-                {pickChamp ?  
+                {pickChamp ?
+                  
                     <Box sx={{
                         width: "124px",
                         height: "224px",
