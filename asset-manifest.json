@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/LoLChampTracker/static/css/main.a617e044.chunk.css",
-    "main.js": "/LoLChampTracker/static/js/main.244914df.chunk.js",
-    "main.js.map": "/LoLChampTracker/static/js/main.244914df.chunk.js.map",
-    "runtime-main.js": "/LoLChampTracker/static/js/runtime-main.d8d3ec96.js",
-    "runtime-main.js.map": "/LoLChampTracker/static/js/runtime-main.d8d3ec96.js.map",
-    "static/js/2.051cb027.chunk.js": "/LoLChampTracker/static/js/2.051cb027.chunk.js",
-    "static/js/2.051cb027.chunk.js.map": "/LoLChampTracker/static/js/2.051cb027.chunk.js.map",
-    "static/js/3.8eb38723.chunk.js": "/LoLChampTracker/static/js/3.8eb38723.chunk.js",
-    "static/js/3.8eb38723.chunk.js.map": "/LoLChampTracker/static/js/3.8eb38723.chunk.js.map",
+    "main.css": "/LoLChampTracker/static/css/main.8394e79c.chunk.css",
+    "main.js": "/LoLChampTracker/static/js/main.6701eff9.chunk.js",
+    "main.js.map": "/LoLChampTracker/static/js/main.6701eff9.chunk.js.map",
+    "runtime-main.js": "/LoLChampTracker/static/js/runtime-main.1564b633.js",
+    "runtime-main.js.map": "/LoLChampTracker/static/js/runtime-main.1564b633.js.map",
+    "static/js/2.6fdb0bdd.chunk.js": "/LoLChampTracker/static/js/2.6fdb0bdd.chunk.js",
+    "static/js/2.6fdb0bdd.chunk.js.map": "/LoLChampTracker/static/js/2.6fdb0bdd.chunk.js.map",
+    "static/js/3.e2986b6d.chunk.js": "/LoLChampTracker/static/js/3.e2986b6d.chunk.js",
+    "static/js/3.e2986b6d.chunk.js.map": "/LoLChampTracker/static/js/3.e2986b6d.chunk.js.map",
     "index.html": "/LoLChampTracker/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/LoLChampTracker/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.051cb027.chunk.js.LICENSE.txt": "/LoLChampTracker/static/js/2.051cb027.chunk.js.LICENSE.txt",
+    "static/css/main.8394e79c.chunk.css.map": "/LoLChampTracker/static/css/main.8394e79c.chunk.css.map",
+    "static/js/2.6fdb0bdd.chunk.js.LICENSE.txt": "/LoLChampTracker/static/js/2.6fdb0bdd.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/LoLChampTracker/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d8d3ec96.js",
-    "static/js/2.051cb027.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.244914df.chunk.js"
+    "static/js/runtime-main.1564b633.js",
+    "static/js/2.6fdb0bdd.chunk.js",
+    "static/css/main.8394e79c.chunk.css",
+    "static/js/main.6701eff9.chunk.js"
   ]
 }
