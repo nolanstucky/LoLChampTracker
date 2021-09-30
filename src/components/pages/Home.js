@@ -9,13 +9,26 @@ import MediaQuery from 'react-responsive'
 
 var champions = ['Aatrox', 'Ahri', 'Akali', 'Akshan', 'Alistar', 'Amumu', 'Anivia', 'Annie', 'Aphelios', 'Ashe', 'AurelionSol', 'Azir', 'Bard', 'Blitzcrank', 'Brand', 'Braum', 'Caitlyn', 'Camille', 'Cassiopeia', 'Chogath', 'Corki', 'Darius', 'Diana', 'DrMundo', 'Draven', 'Ekko', 'Elise', 'Evelynn', 'Ezreal', 'Fiddlesticks', 'Fiora', 'Fizz', 'Galio', 'Gangplank', 'Garen', 'Gnar', 'Gragas', 'Graves', 'Gwen', 'Hecarim', 'Heimerdinger', 'Illaoi', 'Irelia', 'Ivern', 'Janna', 'JarvanIV', 'Jax', 'Jayce', 'Jhin', 'Jinx', 'Kaisa', 'Kalista', 'Karma', 'Karthus', 'Kassadin', 'Katarina', 'Kayle', 'Kayn', 'Kennen', 'Khazix', 'Kindred', 'Kled', 'KogMaw', 'Leblanc', 'LeeSin', 'Leona', 'Lillia', 'Lissandra', 'Lucian', 'Lulu', 'Lux', 'Malphite', 'Malzahar', 'Maokai', 'MasterYi', 'MissFortune', 'Mordekaiser', 'Morgana', 'Nami', 'Nasus', 'Nautilus', 'Neeko', 'Nidalee', 'Nocturne', 'Nunu', 'Olaf', 'Orianna', 'Ornn', 'Pantheon', 'Poppy', 'Pyke', 'Qiyana', 'Quinn', 'Rakan', 'Rammus', 'RekSai', 'Rell', 'Renekton', 'Rengar', 'Riven', 'Rumble', 'Ryze', 'Samira', 'Sejuani', 'Senna', 'Seraphine', 'Sett', 'Shaco', 'Shen', 'Shyvana', 'Singed', 'Sion', 'Sivir', 'Skarner', 'Sona', 'Soraka', 'Swain', 'Sylas', 'Syndra', 'TahmKench', 'Taliyah', 'Talon', 'Taric', 'Teemo', 'Thresh', 'Tristana', 'Trundle', 'Tryndamere', 'TwistedFate', 'Twitch', 'Udyr', 'Urgot', 'Varus', 'Vayne', 'Veigar', 'Velkoz', 'Vi', 'Viego', 'Viktor', 'Vladimir', 'Volibear', 'Warwick', 'MonkeyKing', 'Xayah', 'Xerath', 'XinZhao', 'Yasuo', 'Yone', 'Yorick', 'Yuumi', 'Zac', 'Zed', 'Ziggs', 'Zilean', 'Zoe', 'Zyra', 'Vex']
 var playedChampions = JSON.parse(localStorage.getItem("played champ"));
+// var initializedLocalStorage = [];
+// localStorage.setItem('played champ', JSON.stringify(in));
 console.log(playedChampions)
+initializeLocalStorage();
 determineChampionsLeft();
+
 
 function determineChampionsLeft() {
 
     champions = champions.filter(item => !playedChampions.includes(item))
     console.log(champions)
+}
+
+function initializeLocalStorage() {
+    if ( JSON.parse(localStorage.getItem("played champ")) === null ){
+        console.log("there are champions")
+        let initializeChamps = [];
+        localStorage.setItem('played champ', JSON.stringify(initializeChamps));
+        window.location.reload(false);
+    } 
 }
 
 
@@ -82,50 +95,50 @@ export default function Home() {
                 <Box>
                     <Box style={{ position: "fixed", top: 0, width: "100%", height: "145px", backgroundColor: "#121c40", zIndex: 10, boxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }} boxShadow="initial">
                         <Grid container justifyContent="center" spacing={0}>
-                    <Grid marginTop="45px" marginLeft="-100px" marginRight="20px">
-                        <Button size="large" onClick={handleLockIn} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Lock In </span></Button>
-                    </Grid>
+                            <Grid marginTop="45px" marginLeft="-100px" marginRight="20px">
+                                <Button size="large" onClick={handleLockIn} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Lock In </span></Button>
+                            </Grid>
 
-                    <Grid item xs={0} marginTop="45px" marginRight="100px">
-                        <Button size="large" onClick={handleRandomChamp} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Random</span></Button>
-                    </Grid>
-                    <Grid marginTop="5px" width="90px" height="90px" marginLeft="-50px" marginRight="53px">
+                            <Grid item xs={0} marginTop="45px" marginRight="100px">
+                                <Button size="large" onClick={handleRandomChamp} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Random</span></Button>
+                            </Grid>
+                            <Grid marginTop="5px" width="90px" height="90px" marginLeft="-50px" marginRight="53px">
 
-                        <Box width="90px" height="90px" marginLeft="50px" marginRight="50px">
-                        {showRandomChamp ? <img height="90px" src={`http://ddragon.leagueoflegends.com/cdn/11.19.1/img/champion/${count}.png`} /> : null}
-                        </Box>
+                                <Box width="90px" height="90px" marginLeft="50px" marginRight="50px">
+                                    {showRandomChamp ? <img height="90px" src={`http://ddragon.leagueoflegends.com/cdn/11.19.1/img/champion/${count}.png`} /> : null}
+                                </Box>
 
-                        <Box margin="10px">
-                            <Paper
-                                component="form"
-                                sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 165,}}
-                            >
-                                <InputBase
-                                    sx={{ ml: 1, flex: 1 }}
-                                    placeholder="Search Champions"
-                                    inputProps={{ 'aria-label': 'search google maps' }}
-                                    onChange={handleInputChange}
-                                />
-                                
-                            </Paper>
-                        </Box>
-                    </Grid>
-                    <Grid marginTop="45px" marginLeft="100px">
-                        <Button size="large" onClick={handleChampReset} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Reset</span></Button>
-                    </Grid>
-                    {playedButton ?
-                        <Grid marginTop="45px" marginLeft="20px" marginRight="-100px">
-                            <Button size="large" onClick={handleShowPlayedChamps} variant="contained" ><span style={{ fontFamily: "Friz Quadrata", marginRight: "12px", marginLeft: "12px" }}>Played</span></Button>
+                                <Box margin="10px">
+                                    <Paper
+                                        component="form"
+                                        sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 165, }}
+                                    >
+                                        <InputBase
+                                            sx={{ ml: 1, flex: 1 }}
+                                            placeholder="Search Champions"
+                                            inputProps={{ 'aria-label': 'search google maps' }}
+                                            onChange={handleInputChange}
+                                        />
+
+                                    </Paper>
+                                </Box>
+                            </Grid>
+                            <Grid marginTop="45px" marginLeft="100px">
+                                <Button size="large" onClick={handleChampReset} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Reset</span></Button>
+                            </Grid>
+                            {playedButton ?
+                                <Grid marginTop="45px" marginLeft="20px" marginRight="-100px">
+                                    <Button size="large" onClick={handleShowPlayedChamps} variant="contained" ><span style={{ fontFamily: "Friz Quadrata", marginRight: "12px", marginLeft: "12px" }}>Played</span></Button>
+                                </Grid>
+                                : null}
+                            {unplayedButton ?
+                                <Grid marginTop="45px" marginLeft="20px" marginRight="-100px">
+                                    <Button size="large" onClick={handleShowUnplayedChamps} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Unplayed</span></Button>
+                                </Grid>
+                                : null}
                         </Grid>
-                        : null}
-                    {unplayedButton ?
-                        <Grid marginTop="45px" marginLeft="20px" marginRight="-100px">
-                            <Button size="large" onClick={handleShowUnplayedChamps} variant="contained"><span style={{ fontFamily: "Friz Quadrata" }}>Unplayed</span></Button>
-                        </Grid>
-                        : null}
-                </Grid>
 
-       
+
                     </Box>
                     {showUnplayedChamps ?
                         <Grid display="flex" flexWrap="wrap" marginLeft="25px" marginTop="150px">
